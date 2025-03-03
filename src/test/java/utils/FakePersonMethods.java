@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class FakePersonMethods {
-    static Faker faker = new Faker();
+    Faker faker = new Faker();
     private static final Locale locale = Locale.US;
 
 
