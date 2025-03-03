@@ -5,24 +5,26 @@ import models.StudentData;
 import java.util.Date;
 
 public class StudentDataFactory {
+    FakePersonMethods fakePerson = new FakePersonMethods();
+
     public StudentData generateStudentModelFull() {
         StudentData studentModel = new StudentData();
-        studentModel.setFirstName(FakePersonMethods.getFirstName());
-        studentModel.setLastName(FakePersonMethods.getLastName());
-        studentModel.setPhoneNumber(FakePersonMethods.getPhoneNumber());
-        studentModel.setEmail(FakePersonMethods.getEmail());
-        studentModel.setSubject(FakePersonMethods.getSubject());
-        studentModel.setHobbies(FakePersonMethods.getHobbies());
-        studentModel.setAddress(FakePersonMethods.getAddress());
-        studentModel.setGender(FakePersonMethods.getGender());
-        studentModel.setState(FakePersonMethods.getState());
-        studentModel.setCity(FakePersonMethods.getCity(studentModel.getState()));
-        studentModel.setFileName(FakePersonMethods.getFileName());
+        studentModel.setFirstName(fakePerson.getFirstName());
+        studentModel.setLastName(fakePerson.getLastName());
+        studentModel.setPhoneNumber(fakePerson.getPhoneNumber());
+        studentModel.setEmail(fakePerson.getEmail());
+        studentModel.setSubject(fakePerson.getSubject());
+        studentModel.setHobbies(fakePerson.getHobbies());
+        studentModel.setAddress(fakePerson.getAddress());
+        studentModel.setGender(fakePerson.getGender());
+        studentModel.setState(fakePerson.getState());
+        studentModel.setCity(fakePerson.getCity(studentModel.getState()));
+        studentModel.setFileName(fakePerson.getFileName());
 
-        Date birthdayDate = FakePersonMethods.getBirtdayDate();
-        studentModel.setDay(FakePersonMethods.getDay(birthdayDate));
-        studentModel.setMonth(FakePersonMethods.getMonth(birthdayDate));
-        studentModel.setYear(FakePersonMethods.getYear(birthdayDate));
+        Date birthdayDate = fakePerson.getBirtdayDate();
+        studentModel.setDay(fakePerson.getDay(birthdayDate));
+        studentModel.setMonth(fakePerson.getMonth(birthdayDate));
+        studentModel.setYear(fakePerson.getYear(birthdayDate));
 
 
         return studentModel;
@@ -30,15 +32,15 @@ public class StudentDataFactory {
 
     public StudentData generateStudentModelMandatory() {
         StudentData studentModelMandatory = new StudentData();
-        studentModelMandatory.setFirstName(FakePersonMethods.getFirstName());
-        studentModelMandatory.setLastName(FakePersonMethods.getLastName());
-        studentModelMandatory.setGender(FakePersonMethods.getGender());
-        studentModelMandatory.setPhoneNumber(FakePersonMethods.getPhoneNumber());
+        studentModelMandatory.setFirstName(fakePerson.getFirstName());
+        studentModelMandatory.setLastName(fakePerson.getLastName());
+        studentModelMandatory.setGender(fakePerson.getGender());
+        studentModelMandatory.setPhoneNumber(fakePerson.getPhoneNumber());
 
-        Date birthdayDate = FakePersonMethods.getBirtdayDate();
-        studentModelMandatory.setDay(FakePersonMethods.getDay(birthdayDate));
-        studentModelMandatory.setMonth(FakePersonMethods.getMonth(birthdayDate));
-        studentModelMandatory.setYear(FakePersonMethods.getYear(birthdayDate));
+        Date birthdayDate = fakePerson.getBirtdayDate();
+        studentModelMandatory.setDay(fakePerson.getDay(birthdayDate));
+        studentModelMandatory.setMonth(fakePerson.getMonth(birthdayDate));
+        studentModelMandatory.setYear(fakePerson.getYear(birthdayDate));
 
 
         return studentModelMandatory;

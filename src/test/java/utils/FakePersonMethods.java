@@ -11,63 +11,63 @@ public class FakePersonMethods {
     private static final Locale locale = Locale.US;
 
 
-    public static String getFirstName() {
+    public String getFirstName() {
         return faker.name().firstName();
     }
 
-    public static String getLastName() {
+    public String getLastName() {
         return faker.name().lastName();
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return faker.internet().emailAddress();
     }
 
-    public static String getPhoneNumber() {
+    public String getPhoneNumber() {
         return faker.phoneNumber().subscriberNumber(10);
     }
 
-    public static String getAddress() {
+    public String getAddress() {
         return faker.address().fullAddress();
     }
 
-    public static Date getBirtdayDate() {
+    public Date getBirtdayDate() {
         return faker.date().birthday(18, 70);
     }
 
-    public static String getDay(Date birthdayDate) {
+    public String getDay(Date birthdayDate) {
         return new SimpleDateFormat("dd").format(birthdayDate);
     }
 
-    public static String getMonth(Date birthdayDate) {
+    public String getMonth(Date birthdayDate) {
         return new SimpleDateFormat("MMMM", locale).format(birthdayDate);
     }
 
-    public static String getYear(Date birthdayDate) {
+    public String getYear(Date birthdayDate) {
         return new SimpleDateFormat("yyyy").format(birthdayDate);
     }
 
-    public static String getHobbies() {
+    public String getHobbies() {
         return faker.options().option("Sports", "Reading", "Music");
     }
 
-    public static String getSubject() {
+    public String getSubject() {
         return faker.options().option("Biology", "Chemistry", "Economics", "English", "Hindi", "History", "Maths");
     }
 
-    public static String getFileName() {
+    public String getFileName() {
         return faker.options().option("1.jpg", "2.jpg");
     }
 
-    public static String getGender() {
+    public String getGender() {
         return faker.options().option("Male", "Female", "Other");
     }
 
-    public static String getState() {
+    public String getState() {
         return faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
     }
 
-    public static String getCity(String state) {
+    public String getCity(String state) {
         return switch (state) {
             case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");
             case "Uttar Pradesh" -> faker.options().option("Agra", "Lucknow", "Merrut");

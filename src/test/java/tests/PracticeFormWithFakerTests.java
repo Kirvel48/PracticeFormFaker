@@ -13,6 +13,7 @@ public class PracticeFormWithFakerTests extends TestBase {
     CalendarComponent calendarComponent = new CalendarComponent();
     TableResponseComponent tableResponseComponent = new TableResponseComponent();
     StudentDataFactory studentDataFactory = new StudentDataFactory();
+    FakePersonMethods fakePerson = new FakePersonMethods();
 
 
     @Test
@@ -76,7 +77,7 @@ public class PracticeFormWithFakerTests extends TestBase {
     void fillPracticeFormNegativeTest() {
         practiceFormPage.openPage()
                 .removeBanners()
-                .setFirstName(FakePersonMethods.getFirstName())
+                .setFirstName(fakePerson.getFirstName())
                 .clickSubmit()
                 .modalWithResultNotExist();
 
