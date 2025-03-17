@@ -1,6 +1,7 @@
 package tests;
 
 import models.StudentData;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 import pages.components.CalendarComponent;
@@ -8,6 +9,7 @@ import pages.components.TableResponseComponent;
 import utils.FakePersonMethods;
 import utils.StudentDataFactory;
 
+@Tag("all")
 public class PracticeFormWithFakerTests extends TestBase {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
     CalendarComponent calendarComponent = new CalendarComponent();
@@ -53,10 +55,11 @@ public class PracticeFormWithFakerTests extends TestBase {
     }
 
     @Test
+    @Tag("smoke")
     void fillPracticeMandatoryFormTest() {
         StudentData studentMandatoru = studentDataFactory.generateStudentModelMandatory();
-        practiceFormPage.openPage()
-                .removeBanners()
+        practiceFormPage.openPage();
+        practiceFormPage.removeBanners()
                 .setFirstName(studentMandatoru.getFirstName())
                 .setLastName(studentMandatoru.getLastName())
                 .setGender(studentMandatoru.getGender())
@@ -74,6 +77,7 @@ public class PracticeFormWithFakerTests extends TestBase {
     }
 
     @Test
+    @Tag("smoke")
     void fillPracticeFormNegativeTest() {
         practiceFormPage.openPage()
                 .removeBanners()
