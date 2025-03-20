@@ -75,7 +75,7 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage setState(String value) {
-        state.click();
+        state.scrollTo().click();
         state.$(byText(value)).click();
         return this;
     }
@@ -87,7 +87,8 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage clickSubmit() {
-        submit.click();
+        submit.scrollTo().click();
+
         return this;
     }
 
